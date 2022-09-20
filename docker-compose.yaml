@@ -1,9 +1,6 @@
 version: '3'
 
 services:
-  redis:
-    image: 'redis'
-
   static:
     build: './static/'
     volumes:
@@ -15,8 +12,6 @@ services:
     volumes:
       - './api:/app'
     env_file: './api/.env'
-    depends_on:
-      - redis
 
   proxy:
     build: './proxy/'
